@@ -22,7 +22,7 @@ talk and figure out a better summary.
 3. What did you learn in this baw?
 4. What did you like in this baw?
 5. What did you not like in this baw?
-﻿
+
 A few example summaries along with the questions they target follow:
 
 > Yesterday I finished Bell Jar which is the only novel by Sylvia Plath. She is
