@@ -7,7 +7,8 @@ Audio archive of reading club discussions at Vernacular.ai.
 ## Participation guidelines
 
 `several-people-are-talking` (abbreviated `spat`) is an internal reading club
-which meets together regularly and share summaries from readings.
+which meets together regularly for sharing summaries and learnings from various
+readings.
 
 To make the discussions concise and fruitful, we have a list of questions that
 you should attempt to answer in your summaries. Since different kinds of
