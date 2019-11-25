@@ -1,5 +1,7 @@
-# Day 0
-Date: 2019-11-22
+---
+title: Day 0
+date: "2019-11-22"
+---
 
 A hello world.
 
