@@ -54,3 +54,8 @@ _Questions answered 2, 3_
 ## Editing guidelines
 
 TODO:
+
+Each day has the following items:
+1. Main file `audio.flac`
+2. An audacity compatible label track file `labels.txt`
+3. `index.md` file for text, transcriptions etc.
