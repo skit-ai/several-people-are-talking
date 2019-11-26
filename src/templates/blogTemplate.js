@@ -171,17 +171,20 @@ export default class Template extends React.Component {
                       {
                           (this.state.loaded === 100)
                             ? ""
-                          : <div className="loader" style={{width: this.getWaveformWidth(), height: 20}}>
-                              <div style={{width: `${this.state.loaded}%`, height: 20}}>{this.state.loaded}%</div>
+                          : <div className="loader" style={{width: this.getWaveformWidth()}}>
+                              <div style={{width: `${this.state.loaded}%`}}>&emsp;{this.state.loaded}%</div>
                             </div>
                       }
                       </>
-                      <div style={{ width: this.getWaveformWidth()}} id="waveform"/>
+                      <div style={{
+                          width: this.getWaveformWidth(),
+                          visibility: (this.state.loaded < 100) ? "hidden" : "visible"
+                      }} id="waveform"/>
                       <audio
                         id="song"
                         className="audio-el"
                       />
-                      <div id="duration">
+                      <div id="duration" style={{visibility: (this.state.loaded < 100) ? "hidden" : "visible"}}>
                         <div id="currenttime">00:00</div>
                         <div id="totaltime">00:00</div>
                       </div>

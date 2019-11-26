@@ -592,11 +592,17 @@ pre tt:after {
 
 .loader{
     background-color: #ccc;
+    font-family: Roboto, sans-serif;
+    height: 30px;
+    border-radius: 4px;
 }
 
 .loader div {
-    background-color: rgba(0,119,238,0.7);
-    padding: 2px;
+    background-color: rgba(0,238,119,0.7);
+    height: 30px;
+    color: white;
+    vertical-align: middle;
+    border-radius: 4px;
 }
 
 .audio-control-section {
