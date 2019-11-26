@@ -56,6 +56,25 @@ _Questions answered 2, 3_
 TODO:
 
 Each day has the following items:
-1. Main file `audio.flac`
+1. Main file `audio.ogg`
 2. An audacity compatible label track file `labels.txt`
 3. `index.md` file for text, transcriptions etc.
+4. Place the above artifacts at this path `./src/pages/posts/<date>/`
+5. Prune the use of font-awesome, need to check the size of the final build.
+
+## Project setup
+1. `git clone https://github.com/Vernacular-ai/several-people-are-talking.git`
+2. `cd several-people-are-talking`
+3. `yarn install`
+
+## Build static file
+Refer to the full [documentation](https://github.com/Vernacular-ai/several-people-are-talking.git)
+1. Within `package.json` ensure:
+  ```
+  {
+    "scripts": {
+      "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    }
+  }
+  ```
+2. `gatsby build && gh-pages -d public -b master`
