@@ -17,11 +17,11 @@ const IndexPage = ({
       <SEO title="Home" />
       <p>Audio archive of reading club discussions at Vernacular.ai.</p>
       <p>To make the discussions concise and fruitful, we have a list of questions that you should attempt to answer in your summaries. Since different kinds of readings, at different times, have different provenances and purposes, a summary might only cover a subset of this. Though if your summary doesn't answer any question from here then
-        <ul style={{listStyleType: "lower-alpha"}}>
-          <li>let's talk and add a new question or</li>
-          <li>let's again talk and figure out a better summary.</li>
-        </ul>
       </p>
+      <ul style={{listStyleType: "lower-alpha"}}>
+        <li>let's talk and add a new question or</li>
+        <li>let's again talk and figure out a better summary.</li>
+      </ul>
 
       <ul>
         <li>Why did you choose this book/article/whatever (called baw henceforth)?</li>
