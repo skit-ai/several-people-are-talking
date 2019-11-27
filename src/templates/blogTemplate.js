@@ -1,12 +1,16 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import WaveSurfer from "wavesurfer.js";
 import RegionsPlugin from "wavesurfer.js/src/plugin/regions.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faPause } from "@fortawesome/free-solid-svg-icons";
 
 import { colors } from "./colors.js";
+let WaveSurfer;
+
+if (typeof window !== "undefined") {
+    WaveSurfer = require("wavesurfer.js");
+}
 
 
 export default class Template extends React.Component {
@@ -21,32 +25,34 @@ export default class Template extends React.Component {
         const dirname = this.props.data.markdownRemark.frontmatter.path.replace("/podcasts/", "");
         const textFile = require(`../pages/posts/${dirname}/labels.txt`);
         const regions = this.parseLabels(textFile);
-        const wavesurfer = WaveSurfer.create({
-            barWidth: 3,
-            barHeight: 3,
-            cursorWidth: 1,
-            container: '#waveform',
-            backend: 'MediaElement',
-            height: 100,
-            width: 350,
-            progressColor: '#444',
-            responsive: true,
-            waveColor: '#ccc',
-            cursorColor: 'rgb(0,0,0)',
-            plugins: [
-                RegionsPlugin.create({
-                    regions: regions
-                })
-            ]
-        });
+        if (typeof window !== "undefined") {
+            const wavesurfer = WaveSurfer.create({
+                barWidth: 3,
+                barHeight: 3,
+                cursorWidth: 1,
+                container: '#waveform',
+                backend: 'MediaElement',
+                height: 100,
+                width: 350,
+                progressColor: '#444',
+                responsive: true,
+                waveColor: '#ccc',
+                cursorColor: 'rgb(0,0,0)',
+                plugins: [
+                    RegionsPlugin.create({
+                        regions: regions
+                    })
+                ]
+            });
 
-        this.setState((state) => ({
-            wavesurfer
-        }), () => {
-            wavesurfer.load(`https://several-people-are-talking.s3.ap-south-1.amazonaws.com/${dirname}/audio.ogg`);
-            this.updateDuration();
-            this.wavesurferLoadEventManager();
-        });
+            this.setState((state) => ({
+                wavesurfer
+            }), () => {
+                wavesurfer.load(`https://several-people-are-talking.s3.ap-south-1.amazonaws.com/${dirname}/audio.ogg`);
+                this.updateDuration();
+                this.wavesurferLoadEventManager();
+            });
+        }
     }
 
     parseLabels = (textModule) => {
@@ -82,8 +88,11 @@ export default class Template extends React.Component {
     }
 
     getWaveformWidth = () => {
-        const el = document.getElementById("podcast-container");
-        return el ? el.offsetWidth - 120 : 630;
+        if (typeof document !== "undefined") {
+            const el = document.getElementById("podcast-container");
+            return el ? el.offsetWidth - 120 : 630;
+        }
+        return 630;
     }
 
     playIt = () => {
@@ -104,21 +113,23 @@ export default class Template extends React.Component {
     }
 
     updateDuration = () => {
-        const wavesurfer = this.state.wavesurfer;
-        const currentTimeEl = document.getElementById("currenttime");
-        const totalTimeEl = document.getElementById("totaltime");
-        if (!wavesurfer) {
-            currentTimeEl.innerText = "00:00";
-            totalTimeEl.innerText = "00:00";
-        }
-        wavesurfer.on('audioprocess', () => {
-            if (wavesurfer.isPlaying()) {
-                let totalTime = this.formatToTime(wavesurfer.getDuration().toFixed(2));
-                let currentTime = this.formatToTime(wavesurfer.getCurrentTime().toFixed(2));
-                currentTimeEl.innerText = `${currentTime}`;
-                totalTimeEl.innerText = `${totalTime}`;
+        if (typeof document !== "undefined") {
+            const wavesurfer = this.state.wavesurfer;
+            const currentTimeEl = document.getElementById("currenttime");
+            const totalTimeEl = document.getElementById("totaltime");
+            if (!wavesurfer) {
+                currentTimeEl.innerText = "00:00";
+                totalTimeEl.innerText = "00:00";
             }
-        });
+            wavesurfer.on('audioprocess', () => {
+                if (wavesurfer.isPlaying()) {
+                    let totalTime = this.formatToTime(wavesurfer.getDuration().toFixed(2));
+                    let currentTime = this.formatToTime(wavesurfer.getCurrentTime().toFixed(2));
+                    currentTimeEl.innerText = `${currentTime}`;
+                    totalTimeEl.innerText = `${totalTime}`;
+                }
+            });
+        }
     }
 
     wavesurferLoadEventManager = () => {
