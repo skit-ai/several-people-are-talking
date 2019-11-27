@@ -68,13 +68,7 @@ Each day has the following items:
 3. `yarn install`
 
 ## Build static file
-Refer to the full [documentation](https://github.com/Vernacular-ai/several-people-are-talking.git)
-1. Within `package.json` ensure:
-  ```
-  {
-    "scripts": {
-      "deploy": "gatsby build --prefix-paths && gh-pages -d public"
-    }
-  }
-  ```
-2. `gatsby build && gh-pages -d public -b master`
+Refer to the full [documentation](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/)
+```
+yarn deploy
+```
