@@ -62,6 +62,10 @@ Each day has the following items:
 4. Place the above artifacts at this path `./src/pages/posts/<date>/`
 5. Prune the use of font-awesome, need to check the size of the final build.
 
+## Edit posts
+To edit posts you need to go navigate to `src/pages/posts/<date>/`, [here](https://github.com/Vernacular-ai/several-people-are-talking/tree/master/src/pages/posts) is a link to take you there quickly.
+
+
 ## Project setup
 1. `git clone https://github.com/Vernacular-ai/several-people-are-talking.git`
 2. `cd several-people-are-talking`
