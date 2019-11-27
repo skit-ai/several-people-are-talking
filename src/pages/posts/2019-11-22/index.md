@@ -1,7 +1,7 @@
 ---
 path: "/podcasts/2019-11-22"
 date: "2019-11-22"
-title: "The shy Pilot"
+title: "Day 0"
 ---
 
 ## Meta
