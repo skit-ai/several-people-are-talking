@@ -6,6 +6,8 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faPause } from "@fortawesome/free-solid-svg-icons";
 
 import { colors } from "./colors.js";
+import "../components/layout.css";
+
 let WaveSurfer;
 
 if (typeof window !== "undefined") {
