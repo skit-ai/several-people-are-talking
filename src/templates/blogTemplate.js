@@ -105,7 +105,7 @@ export default class Template extends React.Component {
     }
 
     zeroPadding = (number) => {
-        return number > 10 ? `${number}` : `0${number}`;
+        return number > 9 ? `${number}` : `0${number}`;
     }
 
     formatToTime = (s) => {
