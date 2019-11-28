@@ -141,10 +141,15 @@ export default class Template extends React.Component {
                 loaded: percent
             }));
         });
+
+        wavesurfer.on("ready", () => {
+            this.setState((state) => ({
+                loaded: 100
+            }));
+        });
     }
 
     seekRegion = (idx) => () => {
-        console.log(idx);
         const startPoint = this.state.regions[idx].start;
         const totalDuration = this.state.wavesurfer.getDuration();
         this.state.wavesurfer.seekTo(startPoint/totalDuration);
