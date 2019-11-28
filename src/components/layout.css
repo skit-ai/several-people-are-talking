@@ -581,6 +581,7 @@ pre tt:after {
     letter-spacing: 1px;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: "Roboto", sans-serif;
     padding: 0.3rem 1rem;
     cursor: pointer;
