@@ -24,7 +24,7 @@ export default class Template extends React.Component {
     }
 
     componentDidMount() {
-        const dirname = this.props.data.markdownRemark.frontmatter.path.replace("/podcasts/", "");
+        const dirname = this.props.data.markdownRemark.frontmatter.path.replace("/posts/", "");
         const textFile = require(`../pages/posts/${dirname}/labels.txt`);
         const regions = this.parseLabels(textFile);
         if (typeof window !== "undefined") {

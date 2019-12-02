@@ -1,5 +1,5 @@
 ---
-path: "/podcasts/2019-11-22"
+path: "/posts/2019-11-22"
 date: "2019-11-22"
 title: "Day 0"
 ---
