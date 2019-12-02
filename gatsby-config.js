@@ -4,9 +4,11 @@ module.exports = {
     title: `Several people are talking`,
     description: `Audio archive for reading club discussions at vernacular.ai`,
     author: ``,
+    siteUrl: `https://vernacular-ai.github.io/several-people-are-talking/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
