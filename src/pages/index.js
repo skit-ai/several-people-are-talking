@@ -15,7 +15,8 @@ const IndexPage = ({
     return (
     <Layout>
       <SEO title="Home" />
-      <p><a href="https://github.com/Vernacular-ai/several-people-are-talking/">Audio archive</a> of reading club discussions at Vernacular.ai.</p>
+      <p>Audio archive of reading club discussions at Vernacular.ai. Check the repository <a href="https://github.com/Vernacular-ai/several-people-are-talking/">here</a> for more details on what goes here.</p>
+      <hr/>
       <h2>Posts</h2>
       <div>{Posts}</div>
     </Layout>
