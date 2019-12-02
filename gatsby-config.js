@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: "/several-people-are-talking",
   siteMetadata: {
     title: `Several people are talking`,
-    description: `Audio archive for vernacular.ai`,
+    description: `Audio archive for reading club discussions at vernacular.ai`,
     author: ``,
   },
   plugins: [
