@@ -4,7 +4,6 @@ date: "2019-11-22"
 title: "Day 0"
 ---
 
-## Meta
 A hello world.
 
 We have been meaning to archive our internal reading club discussions. This is a
