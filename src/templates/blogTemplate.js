@@ -2,8 +2,8 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import RegionsPlugin from "wavesurfer.js/src/plugin/regions.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
-import { faPause } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
 import { colors } from "./colors.js";
 import "../components/layout.css";
@@ -112,6 +112,19 @@ export default class Template extends React.Component {
         const minutes = this.zeroPadding(Math.floor(s / 60));
         const seconds = this.zeroPadding(Math.floor(s % 60));
         return `${minutes}:${seconds}`;
+    }
+
+    stripTags = (html) => {
+        if (!html) return "";
+        const div = document.createElement("div");
+        div.innerHTML = html;
+        return div.innerText || "";
+    }
+
+    twitterUrl = (html) => {
+        const summary = this.stripTags(html).replace(/\n+/, " ").substr(0, 100);
+        const url = window.location.href;
+        return `https://twitter.com/intent/tweet?text=${url}%20${summary}...`;
     }
 
     updateDuration = () => {
@@ -229,6 +242,11 @@ export default class Template extends React.Component {
                   className="blog-post-content"
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
+              </div>
+              <div>
+                <a href={this.twitterUrl(html)} className="twitter-button">
+                  <FontAwesomeIcon icon={faTwitter}/> Share
+                </a>
               </div>
             </div>
         );
