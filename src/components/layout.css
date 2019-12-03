@@ -687,3 +687,8 @@ footer div {
     font-size: 0.8rem;
     align-content: center;
 }
+
+.orange-bg {
+    color: #ee802f;
+    text-decoration: none;
+}

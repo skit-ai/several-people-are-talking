@@ -116,6 +116,7 @@ export default class Template extends React.Component {
 
     stripTags = (html) => {
         if (!html) return "";
+        if (typeof document === "undefined") return "";
         const div = document.createElement("div");
         div.innerHTML = html;
         return div.innerText || "";
@@ -123,6 +124,7 @@ export default class Template extends React.Component {
 
     twitterUrl = (html) => {
         const summary = this.stripTags(html).replace(/\n+/, " ").substr(0, 100);
+        if (typeof window === "undefined") return "";
         const url = window.location.href;
         return `https://twitter.com/intent/tweet?text=${url}%20${summary}...`;
     }
@@ -188,7 +190,7 @@ export default class Template extends React.Component {
                     <div>
                       {
                           (this.state.loaded === 100)
-                              ? <button className='play-button' onClick={this.playIt}>
+                              ? <button title="Play/Pause" className='play-button' onClick={this.playIt}>
                                   {(!this.state.audioPlaying)
                                     ? <FontAwesomeIcon icon={faPlay}/>
                                     : <FontAwesomeIcon icon={faPause}/>}
@@ -207,7 +209,8 @@ export default class Template extends React.Component {
                             </div>
                       }
                       </>
-                      <div style={{
+                      <div
+                        style={{
                           width: this.getWaveformWidth(),
                           visibility: (this.state.loaded < 100) ? "hidden" : "visible"
                       }} id="waveform"/>
@@ -227,10 +230,13 @@ export default class Template extends React.Component {
                             ? <ul style={{listStyleType: "none", display: "flex"}} className="speaker-legend">
                               {
                                 this.state.regions.map((region, i) => (
-                                  <li key={i} onClick={this.seekRegion(i)}>
-                                  <span className="legend-icon" style={{background: region.color}}/>
-                                    {region.speaker}
-                                  </li>
+                                    <li
+                                      key={i}
+                                      title={`Play ${region.speaker}'s audio`}
+                                      onClick={this.seekRegion(i)}>
+                                      <span className="legend-icon" style={{background: region.color}}/>
+                                      {region.speaker}
+                                    </li>
                                 ))
                               }
                               </ul>
