@@ -249,7 +249,7 @@ export default class Template extends React.Component {
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
               </div>
-              <div>
+              <div className="share-container">
                 <a href={this.twitterUrl(html)} className="twitter-button">
                   <FontAwesomeIcon icon={faTwitter}/> Share
                 </a>

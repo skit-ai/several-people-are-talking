@@ -232,7 +232,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
     margin-left: 0;
     margin-right: 0;
-    margin-top: 0;
+    margin-top: 1.2rem;
     padding-bottom: 0;
     padding-left: 0;
     padding-right: 0;
@@ -674,6 +674,10 @@ footer div {
     justify-content: center;
 }
 
+.share-container {
+    margin-top: 50px;
+}
+
 .twitter-button {
     display: inline;
     width: 5rem;
@@ -694,4 +698,8 @@ footer div {
     width: 55px;
     height: 55px;
     display: inline-block;
+}
+
+#waveform {
+    height: 73px;
 }
