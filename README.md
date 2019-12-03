@@ -10,7 +10,8 @@ Audio archive of reading club discussions at Vernacular.ai.
 which meets together regularly for sharing summaries and learnings from various
 readings.
 
-To make the discussions concise and fruitful, we have a list of questions that
+To make the discussions concise and fruitful (it's recommended to use a visual
+timer like [this](http://www.timer-tab.com/)), we have a list of questions that
 you should attempt to answer in your summaries. Since different kinds of
 readings, at different times, have different provenances and purposes, a summary
 might only cover a subset of this. Though if your summary doesn't answer any
