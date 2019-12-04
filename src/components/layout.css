@@ -700,6 +700,11 @@ footer div {
     display: inline-block;
 }
 
+
 #waveform {
-    height: 73px;
+    height: 100px;
+}
+
+audio {
+    display: none;
 }
