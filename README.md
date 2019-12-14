@@ -57,15 +57,15 @@ _Questions answered 2, 3_
 TODO:
 
 Each day has the following items:
-1. Main file `audio.ogg`
+1. Main file `audio.ogg` (use `ffmpeg -i input -acodec libopus audio.ogg`).
 2. An audacity compatible label track file `labels.txt`
 3. `index.md` file for text, transcriptions etc.
-4. Place the above artifacts at this path `./src/pages/posts/<date>/`
-5. Prune the use of font-awesome, need to check the size of the final build.
+
+Audios are kept in the s3 bucket `several-people-are-talking/<date>/`. Rest are
+in `./src/pages/posts/<date>/`.
 
 ## Edit posts
 To edit posts you need to go navigate to `src/pages/posts/<date>/`, [here](https://github.com/Vernacular-ai/several-people-are-talking/tree/master/src/pages/posts) is a link to take you there quickly.
-
 
 ## Project setup
 1. `git clone https://github.com/Vernacular-ai/several-people-are-talking.git`
