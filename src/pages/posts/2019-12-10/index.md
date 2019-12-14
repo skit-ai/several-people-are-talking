@@ -4,7 +4,7 @@ date: "2019-12-10"
 title: "Day 3"
 ---
 
-Regression. Back to the mobile phone recording.
+Regression. Back to mobile phone recording.
 
 ## Resources
 + [Ultralearning by Scott H.
