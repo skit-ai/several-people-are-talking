@@ -2,7 +2,8 @@
 
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
-Audio archive of reading club discussions at Vernacular.ai.
+Audio archive of reading club discussions at Vernacular.ai. Accessible
+[here](https://backyard.vernacular.ai/several-people-are-talking).
 
 ## Participation guidelines
 
@@ -77,3 +78,6 @@ Refer to the full [documentation](https://www.gatsbyjs.org/docs/how-gatsby-works
 ```
 yarn deploy
 ```
+
+For deploying on backyard, run `./backyard-deploy.sh`. You will need to be
+logged in aws cli.
